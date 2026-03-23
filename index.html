@@ -5,381 +5,320 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Track & Analyze</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     body { font-family: 'Inter', sans-serif; }
-    h1 { font-family: 'Special Elite', serif; }
+    .serif { font-family: 'Special Elite', serif; }
+    details summary::-webkit-details-marker { display: none; }
   </style>
 </head>
-<body class="bg-[#e8e8e4] min-h-screen">
+<body class="bg-[#e8e8e4]">
 
-  <header class="bg-white w-full flex items-stretch" style="height:52px;">
-    <div class="flex items-center pl-4 pr-6 gap-6">
+  <!-- HEADER -->
+  <header class="bg-white w-full flex items-stretch sticky top-0 z-50 shadow-sm" style="height:52px;">
+    <div class="flex items-center pl-4 pr-4 md:pr-6 gap-4 md:gap-6">
       <div class="w-[34px] h-[34px] rounded-full bg-[#151515] flex items-center justify-center flex-shrink-0">
-        <span class="text-white text-[12px] font-bold"><img src="./LogoBlack.svg" alt=""></span>
+        <img src="./LogoBlack.svg" alt="" class="w-5 h-5 invert"/>
       </div>
-      <nav class="flex items-center gap-6 text-[13px] font-medium text-[#151515]">
-        <a href="#" class="hover:opacity-60 transition-opacity">About us</a>
-        <a href="#" class="hover:opacity-60 transition-opacity">How it works</a>
-        <a href="#" class="hover:opacity-60 transition-opacity">Pricing</a>
-        <a href="#" class="hover:opacity-60 transition-opacity">FAQs</a>
+      <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-[#151515]">
+        <a href="#about" class="hover:opacity-60 transition-opacity">About us</a>
+        <a href="#how" class="hover:opacity-60 transition-opacity">How it works</a>
+        <a href="#pricing" class="hover:opacity-60 transition-opacity">Pricing</a>
+        <a href="#faq" class="hover:opacity-60 transition-opacity">FAQs</a>
       </nav>
     </div>
     <div class="flex-1"></div>
     <div class="flex items-stretch">
-      <a href="#" class="flex items-center justify-center px-8 text-[13px] font-medium text-[#151515] hover:bg-gray-100 transition-colors whitespace-nowrap">
-        Login
-      </a>
-      <a href="#" class="flex items-center justify-center px-7 text-[13px] font-semibold text-white bg-[#151515] hover:bg-black transition-colors whitespace-nowrap">
-        Sign Up
-      </a>
+      <a href="#" class="hidden sm:flex items-center justify-center px-6 text-[13px] font-medium text-[#151515] hover:bg-gray-100 transition-colors whitespace-nowrap">Login</a>
+      <a href="#" class="flex items-center justify-center px-5 md:px-7 text-[13px] font-semibold text-white bg-[#151515] hover:bg-black transition-colors whitespace-nowrap">Sign Up</a>
+      <!-- Hamburger -->
+      <label for="menu-toggle" class="flex md:hidden items-center justify-center px-3 cursor-pointer hover:bg-gray-100">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </label>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-8 pt-16 pb-20 flex items-center justify-between gap-10">
-    <div class="max-w-[460px]">
-      <h1 class="text-[52px] leading-[1.1] text-[#151515] mb-5">
+  <!-- Mobile nav -->
+  <input type="checkbox" id="menu-toggle" class="hidden peer"/>
+  <div class="hidden peer-checked:flex flex-col bg-white border-b border-gray-200 md:hidden px-5 py-4 gap-4 text-[14px] font-medium text-[#151515]">
+    <a href="#about" class="py-1 border-b border-gray-100">About us</a>
+    <a href="#how" class="py-1 border-b border-gray-100">How it works</a>
+    <a href="#pricing" class="py-1 border-b border-gray-100">Pricing</a>
+    <a href="#faq" class="py-1 border-b border-gray-100">FAQs</a>
+    <a href="#" class="py-1">Login</a>
+  </div>
+
+  <!-- HERO -->
+  <main class="max-w-5xl mx-auto px-6 md:px-8 pt-10 md:pt-16 pb-12 md:pb-20 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
+    <div class="w-full md:max-w-[460px]">
+      <h1 class="serif text-[38px] md:text-[52px] leading-[1.1] text-[#151515] mb-4 md:mb-5">
         Always Track &amp;<br/>
         Analyze Your Business<br/>
         Statistics To Succeed.
       </h1>
-      <p class="text-[14px] text-[#444] leading-relaxed mb-8">
-        A better way to manage your sales, team, clients &amp; marketing<br/>
-        — on a single platform. Powerful, affordable &amp; easy.
+      <p class="text-[14px] text-[#444] leading-relaxed mb-7 md:mb-8">
+        A better way to manage your sales, team, clients &amp; marketing — on a single platform. Powerful, affordable &amp; easy.
       </p>
-      <div class="flex mb-10" style="max-width:320px;">
-        <input
-          type="email"
-          placeholder="Enter your email"
-          class="flex-1 border border-[#151515] px-4 py-2.5 text-[13px] text-[#151515] bg-white outline-none placeholder-gray-400"
-        />
-        <button class="bg-[#151515] text-white px-5 py-2.5 text-[13px] font-semibold whitespace-nowrap hover:bg-black transition-colors">
-          Get started
-        </button>
+      <div class="flex mb-8 md:mb-10 max-w-[340px]">
+        <input type="email" placeholder="Enter your email" class="flex-1 border border-[#151515] px-4 py-2.5 text-[13px] text-[#151515] bg-white outline-none placeholder-gray-400 min-w-0"/>
+        <button class="bg-[#151515] text-white px-4 md:px-5 py-2.5 text-[13px] font-semibold whitespace-nowrap hover:bg-black transition-colors">Get started</button>
       </div>
       <div class="flex items-center gap-5">
-        <span class="text-[22px] font-black tracking-tight text-[#151515]">VISA</span>
+        <span class="text-[20px] md:text-[22px] font-black tracking-tight text-[#151515]">VISA</span>
         <div class="flex items-center">
-          <div class="w-[26px] h-[26px] rounded-full bg-[#151515]"></div>
-          <div class="w-[26px] h-[26px] rounded-full bg-[#777] -ml-3"></div>
+          <div class="w-[24px] h-[24px] rounded-full bg-[#151515]"></div>
+          <div class="w-[24px] h-[24px] rounded-full bg-[#777] -ml-3"></div>
         </div>
         <div class="flex items-center gap-1">
-          <span class="text-[#151515] font-bold text-[15px] italic">P</span>
-          <span class="text-[#151515] font-semibold text-[14px]">PayPal</span>
+          <span class="text-[#151515] font-bold text-[14px] italic">P</span>
+          <span class="text-[#151515] font-semibold text-[13px]">PayPal</span>
         </div>
       </div>
     </div>
-
-    <div class="hidden md:flex flex-1 items-center justify-center">
-      <img src="./Illustration_1.svg" alt="hero illustration" class="w-full max-w-[340px] h-auto object-contain"/>
+    <div class="flex md:flex-1 items-center justify-center w-full max-w-[300px] md:max-w-none">
+      <img src="./Illustration_1.svg" alt="" class="w-full max-w-[340px] h-auto object-contain"/>
     </div>
   </main>
-  <div class=" bg-[#F0F0F0] flex flex-row mx-8 my-8">   
 
-  <div class="w-[38%] flex items-center justify-center p-6 ">
-    <img src="./Illustration_2.svg" alt="" class="w-full h-auto object-contain"/>
-  </div>
-
-  <div class="w-[62%] px-8 py-8">
-    <span class="inline-block border border-[#151515] text-[11px] font-semibold tracking-[0.12em] uppercase px-3 py-1 mb-4 text-[#151515]">About us</span>
-
-    <h2 class="text-[32px] leading-[1.2] text-[#151515] mb-4" style="font-family:'Special Elite',serif;">
-      Faster, friendlier feedback<br/>loops make life easier.
-    </h2>
-
-    <p class="text-[14px] text-[#333] leading-relaxed mb-5">
-      Add a Viewer to your team so they can see everything you share, or invite people to individual documents. It's up to you. Stakeholders can check out designs in their web browser, test prototypes and leave feedback for free.
-    </p>
-
-    <ul class="flex flex-col gap-3">
-      <li class="flex items-center gap-3 text-[14px] text-[#151515]">
-        <span class="w-[9px] h-[9px] bg-[#151515] flex-shrink-0"></span>
-        Shared Cloud Libraries, for a single source of truth
-      </li>
-      <li class="flex items-center gap-3 text-[14px] text-[#151515]">
-        <span class="w-[9px] h-[9px] bg-[#151515] flex-shrink-0"></span>
-        Prototype previews for user testing and research
-      </li>
-      <li class="flex items-center gap-3 text-[14px] text-[#151515]">
-        <span class="w-[9px] h-[9px] bg-[#151515] flex-shrink-0"></span>
-        Easy organization with projects
-      </li>
-      <li class="flex items-center gap-3 text-[14px] text-[#151515]">
-        <span class="w-[9px] h-[9px] bg-[#151515] flex-shrink-0"></span>
-        Free developer handoff, right inside the browser
-      </li>
-      <li class="flex items-center gap-3 text-[14px] text-[#151515]">
-        <span class="w-[9px] h-[9px] bg-[#151515] flex-shrink-0"></span>
-        Two-factor authentication and SSO
-      </li>
-    </ul>
-  </div>
-
-</div>
-<section class="bg-[#e8e8e4] px-10 py-12">
-  <div class="max-w-5xl mx-auto flex flex-row items-start gap-10">
-
-    <div class="flex-1">
-      <span class="inline-block border border-[#151515] text-[10px] font-semibold tracking-[0.12em] uppercase px-3 py-1 mb-4 text-[#151515]">How it works</span>
-      <h2 class="text-[36px] leading-[1.15] text-[#151515] mb-10" style="font-family:'Special Elite',serif;">
-        Building the best space<br/>for collaboration.
+  <!-- ABOUT -->
+  <div id="about" class="bg-[#F0F0F0] flex flex-col md:flex-row mx-4 md:mx-8 my-6 md:my-8">
+    <div class="w-full md:w-[38%] flex items-center justify-center p-6">
+      <img src="./Illustration_2.svg" alt="" class="w-full max-w-[280px] h-auto object-contain"/>
+    </div>
+    <div class="w-full md:w-[62%] px-6 md:px-8 py-6 md:py-8">
+      <span class="inline-block border border-[#151515] text-[10px] font-semibold tracking-[0.12em] uppercase px-3 py-1 mb-4 text-[#151515]">About us</span>
+      <h2 class="serif text-[26px] md:text-[32px] leading-[1.2] text-[#151515] mb-4">
+        Faster, friendlier feedback<br/>loops make life easier.
       </h2>
-
-      <div class="flex flex-col gap-8">
-
-        <div class="flex gap-5 items-start">
-          <div class="w-[48px] h-[48px] flex-shrink-0 bg-gray-200 rounded flex items-center justify-center">
-            <img src="./icon_1.svg" alt="" class="w-full h-full object-contain"/>
-          </div>
-          <div>
-            <h3 class="text-[15px] font-semibold text-[#151515] mb-1">Shared Cloud Libraries</h3>
-            <p class="text-[12.5px] text-[#555] leading-relaxed">Navigate to the Your work panel in the left sidebar. Select the library you want to share. Select the Share icon in the upper right to share the library.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-5 items-start">
-          <div class="w-[48px] h-[48px] flex-shrink-0 bg-gray-200 rounded flex items-center justify-center">
-            <img src="./icon.svg" alt="" class="w-full h-full object-contain"/>
-          </div>
-          <div>
-            <h3 class="text-[15px] font-semibold text-[#151515] mb-1">Free developer handoff, right inside</h3>
-            <p class="text-[12.5px] text-[#555] leading-relaxed">Cloud Inspector makes it easy for developers to get the information they need to turn pixels into code — all in the browser and, most importantly, for free.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-5 items-start">
-          <div class="w-[48px] h-[48px] flex-shrink-0 bg-gray-200 rounded flex items-center justify-center">
-            <img src="./icon_3.svg" alt="" class="w-full h-full object-contain"/>
-          </div>
-          <div>
-            <h3 class="text-[15px] font-semibold text-[#151515] mb-1">Real-time collaborative editing</h3>
-            <p class="text-[12.5px] text-[#555] leading-relaxed">Room Service helps you build real-time collaborative features. Add real-time data sync! Let users edit the same data at the same time.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-5 items-start">
-          <div class="w-[48px] h-[48px] flex-shrink-0 bg-gray-200 rounded flex items-center justify-center">
-            <img src="./icon_4.svg" alt="" class="w-full h-full object-contain"/>
-          </div>
-          <div>
-            <h3 class="text-[15px] font-semibold text-[#151515] mb-1">Integrations with the Cloud API</h3>
-            <p class="text-[12.5px] text-[#555] leading-relaxed">Unlocking that value requires an iPaaS that delivers the transformative power of APIs and integration.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="hidden md:flex w-[320px] flex-shrink-0 items-start justify-center pt-10">
-      <img src="./Illustration_3.svg" alt="" class="w-full h-auto object-contain"/>
-    </div>
-
-  </div>
-</section>
-
-<section class="bg-[#e8e8e4] px-10 py-16">
-  <div class="max-w-5xl mx-auto flex flex-row items-center gap-10">
-
-    <div class="hidden md:flex w-[320px] flex-shrink-0 items-center justify-center">
-      <img src="./Illustration_4.svg" alt="" class="w-full h-auto object-contain"/>
-    </div>
-
-    <div class="flex-1 flex flex-col items-end text-right">
-      <span class="inline-block border border-[#151515] text-[10px] font-semibold tracking-[0.12em] uppercase px-3 py-1 mb-5 text-[#151515]">Pricing</span>
-      <h2 class="text-[42px] leading-[1.15] text-[#151515] mb-4" style="font-family:'Special Elite',serif;">
-        Select a membership level<br/>the right price for you.
-      </h2>
-      <p class="text-[13px] text-[#555] leading-relaxed">
-        Prices listed in USD. Taxes may apply.<br/>
-        By using program you agree to our terms and policies.
+      <p class="text-[13.5px] text-[#333] leading-relaxed mb-5">
+        Add a Viewer to your team so they can see everything you share, or invite people to individual documents. It's up to you. Stakeholders can check out designs in their web browser, test prototypes and leave feedback for free.
       </p>
-    </div>
-
-  </div>
-</section>
-<div class="bg-[#e8e8e4] px-10 py-12">
-  <div class="max-w-5xl mx-auto grid grid-cols-3 gap-6">
- 
-    <div class="bg-white border border-gray-200 flex flex-col p-7">
-      <div class="flex items-end gap-1 mb-2">
-        <span class="text-[18px] font-semibold text-[#151515] mb-2">$</span>
-        <span class="text-[64px] font-black leading-none text-[#151515]">49</span>
-        <span class="text-[13px] text-[#151515] mb-2 ml-1">per month</span>
-      </div>
-      <p class="text-[13.5px] text-[#151515] mb-6">A pay-once license, just for you</p>
-      <ul class="flex flex-col gap-3 flex-1 mb-8">
-        <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>The Mac app — yours to keep</li>
-        <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>Beautiful White_level</li>
-        <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>One year of saving to Cloud</li>
+      <ul class="flex flex-col gap-3">
+        <li class="flex items-center gap-3 text-[13.5px] text-[#151515]"><span class="w-[9px] h-[9px] bg-[#151515] flex-shrink-0"></span>Shared Cloud Libraries, for a single source of truth</li>
+        <li class="flex items-center gap-3 text-[13.5px] text-[#151515]"><span class="w-[9px] h-[9px] bg-[#151515] flex-shrink-0"></span>Prototype previews for user testing and research</li>
+        <li class="flex items-center gap-3 text-[13.5px] text-[#151515]"><span class="w-[9px] h-[9px] bg-[#151515] flex-shrink-0"></span>Easy organization with projects</li>
+        <li class="flex items-center gap-3 text-[13.5px] text-[#151515]"><span class="w-[9px] h-[9px] bg-[#151515] flex-shrink-0"></span>Free developer handoff, right inside the browser</li>
+        <li class="flex items-center gap-3 text-[13.5px] text-[#151515]"><span class="w-[9px] h-[9px] bg-[#151515] flex-shrink-0"></span>Two-factor authentication and SSO</li>
       </ul>
-      <button class="w-full bg-[#151515] text-white text-[13.5px] font-semibold py-3 hover:bg-black transition-colors">Join</button>
     </div>
- 
-    <div class="bg-[#151515] flex flex-col p-7">
-      <div class="flex items-end gap-1 mb-2">
-        <span class="text-[18px] font-semibold text-white mb-2">$</span>
-        <span class="text-[64px] font-black leading-none text-white" >99</span>
-        <span class="text-[13px] text-white mb-2 ml-1">per month</span>
-      </div>
-      <p class="text-[13.5px] text-white mb-6">Pro account, just for you</p>
-      <ul class="flex flex-col gap-3 flex-1 mb-8">
-        <li class="flex items-center gap-3 text-[13px] text-white"><span class="w-[8px] h-[8px] bg-white flex-shrink-0"></span>The Mac app — yours to keep</li>
-        <li class="flex items-center gap-3 text-[13px] text-white"><span class="w-[8px] h-[8px] bg-white flex-shrink-0"></span>One year of Mac app updates</li>
-        <li class="flex items-center gap-3 text-[13px] text-white"><span class="w-[8px] h-[8px] bg-white flex-shrink-0"></span>One year of saving to Cloud</li>
-        <li class="flex items-center gap-3 text-[13px] text-white"><span class="w-[8px] h-[8px] bg-white flex-shrink-0"></span>A personal Cloud workspace</li>
-        <li class="flex items-center gap-3 text-[13px] text-white"><span class="w-[8px] h-[8px] bg-white flex-shrink-0"></span>All tools, just for you</li>
-      </ul>
-      <button class="w-full bg-white text-[#151515] text-[13.5px] font-semibold py-3 hover:bg-gray-100 transition-colors">Join</button>
-    </div>
- 
-    <div class="bg-white border border-gray-200 flex flex-col p-7">
-      <div class="flex items-end gap-1 mb-2">
-        <span class="text-[18px] font-semibold text-[#151515] mb-2">$</span>
-        <span class="text-[64px] font-black leading-none text-[#151515]">299</span>
-        <span class="text-[13px] text-[#151515] mb-2 ml-1">per month</span>
-      </div>
-      <p class="text-[13.5px] text-[#151515] mb-6">A subscription for the whole team</p>
-      <ul class="flex flex-col gap-3 flex-1 mb-8">
-        <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>Access to the Mac app for all</li>
-        <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>A shared Cloud workspace</li>
-        <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>Free Cloud access for unlim</li>
-        <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>Easy team management</li>
-        <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>No license key required</li>
-      </ul>
-      <button class="w-full bg-[#151515] text-white text-[13.5px] font-semibold py-3 hover:bg-black transition-colors">Join</button>
-    </div>
- 
   </div>
-</div>
-<section class="bg-[#e8e8e4] px-10 py-12">
-  <div class="max-w-5xl mx-auto flex flex-row gap-10">
 
-    <div class="flex-1">
-      <span class="inline-block border border-[#151515] text-[10px] font-semibold tracking-[0.12em] uppercase px-3 py-1 mb-4 text-[#151515]">FAQs</span>
-      <h2 class="text-[42px] leading-[1.1] text-[#151515] mb-4" style="font-family:'Special Elite',serif;">Common Questions.</h2>
-
-      <div class="flex flex-col">
-
-        <details class="group border-t border-[#aaa] py-4">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
-            <span class="text-[14px] font-semibold text-[#151515]">How much does a Teams subscription cost?</span>
-            <span class="text-[20px] text-[#151515] group-open:hidden">+</span>
-            <span class="text-[20px] text-[#151515] hidden group-open:block">−</span>
-          </summary>
-        
-        </details>
-
-        <details class="group border-t border-[#aaa] py-4">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
-            <span class="text-[14px] font-semibold text-[#151515]">Do I still need to purchase licenses for the Mac app?</span>
-            <span class="text-[20px] text-[#151515] group-open:hidden">+</span>
-            <span class="text-[20px] text-[#151515] hidden group-open:block">−</span>
-          </summary>
-         
-        </details>
-
-        <details class="group border-t border-[#aaa] py-4">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
-            <span class="text-[14px] font-semibold text-[#151515]">What are the differences between Contributors and Viewers?</span>
-            <span class="text-[20px] text-[#151515] group-open:hidden">+</span>
-            <span class="text-[20px] text-[#151515] hidden group-open:block">−</span>
-          </summary>
-         
-        </details>
-
-        <details class="group border-t border-[#aaa] py-4">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
-            <span class="text-[14px] font-semibold text-[#151515]">How long does the free Teams subscription trial last?</span>
-            <span class="text-[20px] text-[#151515] group-open:hidden">+</span>
-            <span class="text-[20px] text-[#151515] hidden group-open:block">−</span>
-          </summary>
-         
-        </details>
-
-        <details class="group border-t border-b border-[#aaa] py-4">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
-            <span class="text-[14px] font-semibold text-[#151515]">Will program for Teams replace volume licensing?</span>
-            <span class="text-[20px] text-[#151515] group-open:hidden">+</span>
-            <span class="text-[20px] text-[#151515] hidden group-open:block">−</span>
-          </summary>
-         
-        </details>
-
+  <!-- HOW IT WORKS -->
+  <section id="how" class="bg-[#e8e8e4] px-6 md:px-10 py-10 md:py-12">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-10">
+      <div class="flex-1">
+        <span class="inline-block border border-[#151515] text-[10px] font-semibold tracking-[0.12em] uppercase px-3 py-1 mb-4 text-[#151515]">How it works</span>
+        <h2 class="serif text-[28px] md:text-[36px] leading-[1.15] text-[#151515] mb-8 md:mb-10">Building the best space<br/>for collaboration.</h2>
+        <div class="flex flex-col gap-7 md:gap-8">
+          <div class="flex gap-4 md:gap-5 items-start">
+            <div class="w-[44px] h-[44px] flex-shrink-0 bg-gray-200 rounded flex items-center justify-center">
+              <img src="./icon_1.svg" alt="" class="w-full h-full object-contain"/>
+            </div>
+            <div>
+              <h3 class="text-[14px] md:text-[15px] font-semibold text-[#151515] mb-1">Shared Cloud Libraries</h3>
+              <p class="text-[12.5px] text-[#555] leading-relaxed">Navigate to the Your work panel in the left sidebar. Select the library you want to share. Select the Share icon in the upper right to share the library.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 md:gap-5 items-start">
+            <div class="w-[44px] h-[44px] flex-shrink-0 bg-gray-200 rounded flex items-center justify-center">
+              <img src="./icon.svg" alt="" class="w-full h-full object-contain"/>
+            </div>
+            <div>
+              <h3 class="text-[14px] md:text-[15px] font-semibold text-[#151515] mb-1">Free developer handoff, right inside</h3>
+              <p class="text-[12.5px] text-[#555] leading-relaxed">Cloud Inspector makes it easy for developers to get the information they need to turn pixels into code — all in the browser and, most importantly, for free.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 md:gap-5 items-start">
+            <div class="w-[44px] h-[44px] flex-shrink-0 bg-gray-200 rounded flex items-center justify-center">
+              <img src="./icon_3.svg" alt="" class="w-full h-full object-contain"/>
+            </div>
+            <div>
+              <h3 class="text-[14px] md:text-[15px] font-semibold text-[#151515] mb-1">Real-time collaborative editing</h3>
+              <p class="text-[12.5px] text-[#555] leading-relaxed">Room Service helps you build real-time collaborative features. Add real-time data sync! Let users edit the same data at the same time.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 md:gap-5 items-start">
+            <div class="w-[44px] h-[44px] flex-shrink-0 bg-gray-200 rounded flex items-center justify-center">
+              <img src="./icon_4.svg" alt="" class="w-full h-full object-contain"/>
+            </div>
+            <div>
+              <h3 class="text-[14px] md:text-[15px] font-semibold text-[#151515] mb-1">Integrations with the Cloud API</h3>
+              <p class="text-[12.5px] text-[#555] leading-relaxed">Unlocking that value requires an iPaaS that delivers the transformative power of APIs and integration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden md:flex w-[320px] flex-shrink-0 items-start justify-center pt-10">
+        <img src="./Illustration_3.svg" alt="" class="w-full h-auto object-contain"/>
       </div>
     </div>
+  </section>
 
-    <div class="hidden md:flex w-[280px] flex-shrink-0 items-start justify-center pt-6">
-      <img src="./Illustration_5.svg" alt="" class="w-full h-auto object-contain"/>
+  <!-- PRICING INTRO -->
+  <section class="bg-[#e8e8e4] px-6 md:px-10 py-10 md:py-16">
+    <div class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-10">
+      <div class="flex w-full md:w-[320px] flex-shrink-0 items-center justify-center">
+        <img src="./Illustration_4.svg" alt="" class="w-full max-w-[260px] h-auto object-contain"/>
+      </div>
+      <div class="flex-1 flex flex-col items-start md:items-end text-left md:text-right">
+        <span class="inline-block border border-[#151515] text-[10px] font-semibold tracking-[0.12em] uppercase px-3 py-1 mb-4 md:mb-5 text-[#151515]">Pricing</span>
+        <h2 class="serif text-[30px] md:text-[42px] leading-[1.15] text-[#151515] mb-4">Select a membership level<br/>the right price for you.</h2>
+        <p class="text-[13px] text-[#555] leading-relaxed">Prices listed in USD. Taxes may apply.<br/>By using program you agree to our terms and policies.</p>
+      </div>
     </div>
+  </section>
 
+  <!-- PRICING CARDS -->
+  <div id="pricing" class="bg-[#e8e8e4] px-6 md:px-10 pb-10 md:pb-12">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+      <div class="bg-white border border-gray-200 flex flex-col p-6 md:p-7">
+        <div class="flex items-end gap-1 mb-2">
+          <span class="text-[16px] font-semibold text-[#151515] mb-2">$</span>
+          <span class="serif text-[56px] md:text-[64px] font-black leading-none text-[#151515]">49</span>
+          <span class="text-[13px] text-[#151515] mb-2 ml-1">per month</span>
+        </div>
+        <p class="text-[13px] text-[#151515] mb-5">A pay-once license, just for you</p>
+        <ul class="flex flex-col gap-3 flex-1 mb-7">
+          <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>The Mac app — yours to keep</li>
+          <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>Beautiful White_level</li>
+          <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>One year of saving to Cloud</li>
+        </ul>
+        <button class="w-full bg-[#151515] text-white text-[13px] font-semibold py-3 hover:bg-black transition-colors">Join</button>
+      </div>
+      <div class="bg-[#151515] flex flex-col p-6 md:p-7">
+        <div class="flex items-end gap-1 mb-2">
+          <span class="text-[16px] font-semibold text-white mb-2">$</span>
+          <span class="serif text-[56px] md:text-[64px] font-black leading-none text-white">99</span>
+          <span class="text-[13px] text-white mb-2 ml-1">per month</span>
+        </div>
+        <p class="text-[13px] text-white mb-5">Pro account, just for you</p>
+        <ul class="flex flex-col gap-3 flex-1 mb-7">
+          <li class="flex items-center gap-3 text-[13px] text-white"><span class="w-[8px] h-[8px] bg-white flex-shrink-0"></span>The Mac app — yours to keep</li>
+          <li class="flex items-center gap-3 text-[13px] text-white"><span class="w-[8px] h-[8px] bg-white flex-shrink-0"></span>One year of Mac app updates</li>
+          <li class="flex items-center gap-3 text-[13px] text-white"><span class="w-[8px] h-[8px] bg-white flex-shrink-0"></span>One year of saving to Cloud</li>
+          <li class="flex items-center gap-3 text-[13px] text-white"><span class="w-[8px] h-[8px] bg-white flex-shrink-0"></span>A personal Cloud workspace</li>
+          <li class="flex items-center gap-3 text-[13px] text-white"><span class="w-[8px] h-[8px] bg-white flex-shrink-0"></span>All tools, just for you</li>
+        </ul>
+        <button class="w-full bg-white text-[#151515] text-[13px] font-semibold py-3 hover:bg-gray-100 transition-colors">Join</button>
+      </div>
+      <div class="bg-white border border-gray-200 flex flex-col p-6 md:p-7">
+        <div class="flex items-end gap-1 mb-2">
+          <span class="text-[16px] font-semibold text-[#151515] mb-2">$</span>
+          <span class="serif text-[56px] md:text-[64px] font-black leading-none text-[#151515]">299</span>
+          <span class="text-[13px] text-[#151515] mb-2 ml-1">per month</span>
+        </div>
+        <p class="text-[13px] text-[#151515] mb-5">A subscription for the whole team</p>
+        <ul class="flex flex-col gap-3 flex-1 mb-7">
+          <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>Access to the Mac app for all</li>
+          <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>A shared Cloud workspace</li>
+          <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>Free Cloud access for unlim</li>
+          <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>Easy team management</li>
+          <li class="flex items-center gap-3 text-[13px] text-[#151515]"><span class="w-[8px] h-[8px] bg-[#151515] flex-shrink-0"></span>No license key required</li>
+        </ul>
+        <button class="w-full bg-[#151515] text-white text-[13px] font-semibold py-3 hover:bg-black transition-colors">Join</button>
+      </div>
+    </div>
   </div>
-</section>
-<footer class="bg-[#151515] px-10 py-12">
-  <div class="max-w-5xl mx-auto">
 
-    <div class="flex flex-row gap-10 mb-10">
-
-      <div class="w-[320px] flex-shrink-0">
-        <div class="w-[46px] h-[46px] rounded-full border-2 border-white flex items-center justify-center mb-6">
-          <span class="text-white text-[14px] font-bold"><img src="./LogoWhite.svg" alt=""></span>
-        </div>
-
-        <div class="flex gap-2 mb-7">
-          <div class="w-[46px] h-[46px] border border-dashed border-white flex items-center justify-center">
-            <span class="text-white text-[13px] font-bold">f</span>
-          </div>
-          <div class="w-[46px] h-[46px] border border-dashed border-white flex items-center justify-center">
-            <span class="text-white text-[13px] font-bold">𝕏</span>
-          </div>
-          <div class="w-[46px] h-[46px] border border-dashed border-white flex items-center justify-center">
-            <span class="text-white text-[12px] font-bold">G+</span>
-          </div>
-          <div class="w-[46px] h-[46px] border border-dashed border-white flex items-center justify-center">
-            <span class="text-white text-[13px] font-bold">in</span>
-          </div>
-          <div class="w-[46px] h-[46px] border border-dashed border-white flex items-center justify-center">
-            <span class="text-white text-[13px]">▶</span>
-          </div>
-        </div>
-
-        <p class="text-white text-[14px] font-semibold mb-4">Want to recieve our awesome stories?</p>
-
-        <div class="flex" style="max-width:320px;">
-          <input type="email" placeholder="Enter your email" class="flex-1 bg-transparent border border-white px-4 py-2.5 text-[13px] text-white placeholder-gray-500 outline-none"/>
-          <button class="bg-white text-[#151515] px-5 py-2.5 text-[13px] font-semibold whitespace-nowrap hover:bg-gray-200 transition-colors">Subcribe</button>
+  <!-- FAQ -->
+  <section id="faq" class="bg-[#e8e8e4] px-6 md:px-10 py-10 md:py-12">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 md:gap-10">
+      <div class="flex-1">
+        <span class="inline-block border border-[#151515] text-[10px] font-semibold tracking-[0.12em] uppercase px-3 py-1 mb-4 text-[#151515]">FAQs</span>
+        <h2 class="serif text-[32px] md:text-[42px] leading-[1.1] text-[#151515] mb-4">Common Questions.</h2>
+        <p class="text-[13px] text-[#555] leading-relaxed mb-7 max-w-[380px]">The online form also provides links to a set of frequently asked questions, other information materials related to the financial disclosure programme.</p>
+        <div class="flex flex-col">
+          <details class="group border-t border-[#aaa] py-4">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="text-[13.5px] font-semibold text-[#151515]">How much does a Teams subscription cost?</span>
+              <span class="text-[20px] text-[#151515] group-open:hidden flex-shrink-0 ml-4">+</span>
+              <span class="text-[20px] text-[#151515] hidden group-open:block flex-shrink-0 ml-4">−</span>
+            </summary>
+          </details>
+          <details class="group border-t border-[#aaa] py-4">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="text-[13.5px] font-semibold text-[#151515]">Do I still need to purchase licenses for the Mac app?</span>
+              <span class="text-[20px] text-[#151515] group-open:hidden flex-shrink-0 ml-4">+</span>
+              <span class="text-[20px] text-[#151515] hidden group-open:block flex-shrink-0 ml-4">−</span>
+            </summary>
+          </details>
+          <details class="group border-t border-[#aaa] py-4">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="text-[13.5px] font-semibold text-[#151515]">What are the differences between Contributors and Viewers?</span>
+              <span class="text-[20px] text-[#151515] group-open:hidden flex-shrink-0 ml-4">+</span>
+              <span class="text-[20px] text-[#151515] hidden group-open:block flex-shrink-0 ml-4">−</span>
+            </summary>
+          </details>
+          <details class="group border-t border-[#aaa] py-4">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="text-[13.5px] font-semibold text-[#151515]">How long does the free Teams subscription trial last?</span>
+              <span class="text-[20px] text-[#151515] group-open:hidden flex-shrink-0 ml-4">+</span>
+              <span class="text-[20px] text-[#151515] hidden group-open:block flex-shrink-0 ml-4">−</span>
+            </summary>
+          </details>
+          <details class="group border-t border-b border-[#aaa] py-4">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="text-[13.5px] font-semibold text-[#151515]">Will program for Teams replace volume licensing?</span>
+              <span class="text-[20px] text-[#151515] group-open:hidden flex-shrink-0 ml-4">+</span>
+              <span class="text-[20px] text-[#151515] hidden group-open:block flex-shrink-0 ml-4">−</span>
+            </summary>
+          </details>
         </div>
       </div>
-
-      <div class="flex-1 flex flex-row gap-12 pt-1">
-
-        <div>
-          <p class="text-white text-[15px] font-bold mb-3">Email</p>
-          <a href="mailto:info@the18.design" class="text-gray-400 text-[13px] hover:text-white transition-colors">info@the18.design</a>
-        </div>
-
-        <div class="flex flex-col gap-3">
-          <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">About us</a>
-          <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">How it works</a>
-          <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Pricing</a>
-          <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">FAQs</a>
-        </div>
-
-        <div class="flex flex-col gap-3">
-          <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Lead generation</a>
-          <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Customer engagement</a>
-          <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Customer support</a>
-          <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Help Center Articles</a>
-          <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Outbound Messages</a>
-        </div>
-
+      <div class="hidden md:flex w-[280px] flex-shrink-0 items-start justify-center pt-6">
+        <img src="./Illustration_5.svg" alt="" class="w-full h-auto object-contain"/>
       </div>
     </div>
+  </section>
 
-    <div class="border-t border-gray-700 pt-6">
-      <p class="text-gray-400 text-[13px]">© 18 Design, all rights reserved.</p>
+  <!-- FOOTER -->
+  <footer class="bg-[#151515] px-6 md:px-10 py-10 md:py-12">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-8 md:gap-10 mb-8 md:mb-10">
+        <div class="w-full md:w-[320px] flex-shrink-0">
+          <div class="w-[46px] h-[46px] rounded-full border-2 border-white flex items-center justify-center mb-5 md:mb-6">
+            <img src="./LogoWhite.svg" alt="" class="w-5 h-5"/>
+          </div>
+          <div class="flex gap-2 mb-6 md:mb-7">
+            <div class="w-[42px] h-[42px] border border-dashed border-white flex items-center justify-center"><span class="text-white text-[13px] font-bold">f</span></div>
+            <div class="w-[42px] h-[42px] border border-dashed border-white flex items-center justify-center"><span class="text-white text-[13px] font-bold">𝕏</span></div>
+            <div class="w-[42px] h-[42px] border border-dashed border-white flex items-center justify-center"><span class="text-white text-[11px] font-bold">G+</span></div>
+            <div class="w-[42px] h-[42px] border border-dashed border-white flex items-center justify-center"><span class="text-white text-[13px] font-bold">in</span></div>
+            <div class="w-[42px] h-[42px] border border-dashed border-white flex items-center justify-center"><span class="text-white text-[13px]">▶</span></div>
+          </div>
+          <p class="text-white text-[14px] font-semibold mb-4">Want to recieve our awesome stories?</p>
+          <div class="flex max-w-[320px]">
+            <input type="email" placeholder="Enter your email" class="flex-1 bg-transparent border border-white px-4 py-2.5 text-[13px] text-white placeholder-gray-500 outline-none min-w-0"/>
+            <button class="bg-white text-[#151515] px-4 md:px-5 py-2.5 text-[13px] font-semibold whitespace-nowrap hover:bg-gray-200 transition-colors">Subcribe</button>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-row flex-wrap gap-8 md:gap-12 pt-0 md:pt-1">
+          <div>
+            <p class="text-white text-[14px] font-bold mb-3">Email</p>
+            <a href="mailto:info@the18.design" class="text-gray-400 text-[13px] hover:text-white transition-colors">info@the18.design</a>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a href="#about" class="text-gray-300 text-[13px] hover:text-white transition-colors">About us</a>
+            <a href="#how" class="text-gray-300 text-[13px] hover:text-white transition-colors">How it works</a>
+            <a href="#pricing" class="text-gray-300 text-[13px] hover:text-white transition-colors">Pricing</a>
+            <a href="#faq" class="text-gray-300 text-[13px] hover:text-white transition-colors">FAQs</a>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Lead generation</a>
+            <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Customer engagement</a>
+            <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Customer support</a>
+            <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Help Center Articles</a>
+            <a href="#" class="text-gray-300 text-[13px] hover:text-white transition-colors">Outbound Messages</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-5 md:pt-6">
+        <p class="text-gray-400 text-[13px]">© 18 Design, all rights reserved.</p>
+      </div>
     </div>
+  </footer>
 
-  </div>
-</footer>
 </body>
 </html>
